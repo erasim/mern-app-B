@@ -14,9 +14,12 @@ app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
-app.get("/", (req, res) => {
-	res.send("this is the stack overflow api ");
-});
+// app.get("/", (req, res) => {
+// 	res.send("this is the stack overflow api ");
+// });
+app.get('/', function (req, res) {
+	res.send('Hello World!');
+  });
 app.use("/user", userRoutes);
 app.use("/questions", questionRoutes);
 app.use("/answer", answerRoutes);
